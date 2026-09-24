@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#b3123f" />
+  <title>Um convite para Sara Luana ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <div id="hearts-container" aria-hidden="true"></div>
+
+  <main class="app">
+    <section class="card screen active" id="screen-start">
+      <div class="eyebrow">UMA COISINHA PRA VOCÊ 💌</div>
+      <div class="big-heart">❤️</div>
+      <h1>Oi, Sara Luana</h1>
+      <p>
+        Preparei uma coisinha rápida pra você...
+        <br />
+        mas vai ter que escolher direitinho. 😏
+      </p>
+      <button class="primary-btn" data-next="screen-food">
+        Começar 💕
+      </button>
+    </section>
+
+    <section class="card screen" id="screen-food">
+      <div class="progress">
+        <span class="progress-dot active"></span>
+        <span class="progress-dot"></span>
+        <span class="progress-dot"></span>
+      </div>
+
+      <div class="step-label">1 de 3</div>
+      <h2>Primeiro assunto sério...</h2>
+      <p class="question">O que vamos comer? 🤨</p>
+
+      <div class="options-grid food-grid">
+        <button class="option-btn" data-food="Japonês">
+          <span class="option-emoji">🍣</span>
+          <span>Japonês</span>
+        </button>
+        <button class="option-btn" data-food="Pizza">
+          <span class="option-emoji">🍕</span>
+          <span>Pizza</span>
+        </button>
+        <button class="option-btn" data-food="Hambúrguer">
+          <span class="option-emoji">🍔</span>
+          <span>Hambúrguer</span>
+        </button>
+        <button class="option-btn" data-food="Massa">
+          <span class="option-emoji">🍝</span>
+          <span>Massa</span>
+        </button>
+        <button class="option-btn" data-food="Churrasco">
+          <span class="option-emoji">🥩</span>
+          <span>Churrasco</span>
+        </button>
+        <button class="option-btn" data-food="Você escolhe por mim">
+          <span class="option-emoji">🎲</span>
+          <span>Você escolhe por mim</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="card screen" id="screen-date">
+      <div class="progress">
+        <span class="progress-dot done"></span>
+        <span class="progress-dot active"></span>
+        <span class="progress-dot"></span>
+      </div>
+
+      <div class="step-label">2 de 3</div>
+      <h2>Agora escolhe o dia 📅</h2>
+      <p>
+        Escolhe uma data que fique boa pra você.
+      </p>
+
+      <label class="date-picker-card">
+        <span class="calendar-icon">🗓️</span>
+        <span class="date-label">Nosso dia</span>
+        <input type="date" id="date-input" />
+      </label>
+
+      <p class="helper-text" id="date-helper">
+        Datas passadas ficam bloqueadas.
+      </p>
+
+      <button class="primary-btn" id="date-next-btn" disabled>
+        Próximo ❤️
+      </button>
+
+      <button class="back-btn" data-back="screen-food">
+        ← Voltar
+      </button>
+    </section>
+
+    <section class="card screen" id="screen-time">
+      <div class="progress">
+        <span class="progress-dot done"></span>
+        <span class="progress-dot done"></span>
+        <span class="progress-dot active"></span>
+      </div>
+
+      <div class="step-label">3 de 3</div>
+      <h2>E qual horário? ⏰</h2>
+      <p class="question">Escolhe com sabedoria... 👀</p>
+
+      <div class="options-grid time-grid">
+        <button class="option-btn time-btn" data-time="18:00">18:00</button>
+        <button class="option-btn time-btn" data-time="19:00">19:00</button>
+        <button class="option-btn time-btn" data-time="20:00">20:00</button>
+        <button class="option-btn time-btn" data-time="21:00">21:00</button>
+        <button class="option-btn time-btn" data-time="22:00">22:00</button>
+      </div>
+
+      <button class="back-btn" data-back="screen-date">
+        ← Voltar
+      </button>
+    </section>
+
+    <section class="card screen" id="screen-summary">
+      <div class="thinking">Hmmmm... 🤨❤️</div>
+      <h2>Então ficou assim:</h2>
+
+      <div class="summary-box">
+        <div class="summary-item">
+          <span>🍽️</span>
+          <div>
+            <small>Comida</small>
+            <strong id="summary-food">-</strong>
+          </div>
+        </div>
+
+        <div class="summary-item">
+          <span>📅</span>
+          <div>
+            <small>Data</small>
+            <strong id="summary-date">-</strong>
+          </div>
+        </div>
+
+        <div class="summary-item">
+          <span>🕗</span>
+          <div>
+            <small>Horário</small>
+            <strong id="summary-time">-</strong>
+          </div>
+        </div>
+      </div>
+
+      <p class="suspense-text">
+        Interessante... mas ainda falta uma coisa importante. 😏
+      </p>
+
+      <button class="primary-btn" id="reveal-invite-btn">
+        Quero saber 👀
+      </button>
+    </section>
+
+    <section class="card screen invitation-card" id="screen-invite">
+      <div class="invite-hearts">💕</div>
+      <p class="invite-name">Sara Luana...</p>
+      <h2 class="invite-question">
+        Quer sair comigo,<br />
+        <span>meu mingau de aveia?</span> 🥣❤️
+      </h2>
+
+      <div class="invite-actions" id="invite-actions">
+        <button class="primary-btn yes-btn" id="yes-btn">
+          SIMMMMM ❤️
+        </button>
+
+        <button class="secondary-btn runaway-btn" id="maybe-btn">
+          Não sei... 🤨
+        </button>
+      </div>
+
+      <p class="tiny-message" id="runaway-message"></p>
+    </section>
+
+    <section class="card screen success-card" id="screen-success">
+      <div class="success-emoji">🥳❤️</div>
+      <h2>SABIAAAAA 😏❤️</h2>
+      <p>
+        Então nosso encontro está marcado,<br />
+        <strong>meu mingau de aveia 🥣💕</strong>
+      </p>
+
+      <div class="summary-box final-summary">
+        <div class="summary-item">
+          <span>🍽️</span>
+          <div>
+            <small>Comida</small>
+            <strong id="final-food">-</strong>
+          </div>
+        </div>
+
+        <div class="summary-item">
+          <span>📅</span>
+          <div>
+            <small>Data</small>
+            <strong id="final-date">-</strong>
+          </div>
+        </div>
+
+        <div class="summary-item">
+          <span>🕗</span>
+          <div>
+            <small>Horário</small>
+            <strong id="final-time">-</strong>
+          </div>
+        </div>
+      </div>
+
+      <p class="final-note">
+        Agora não tem mais volta 😌❤️
+      </p>
+
+      <button class="secondary-btn restart-btn" id="restart-btn">
+        Ver de novo ↻
+      </button>
+    </section>
+  </main>
+
+  <div id="celebration-container" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
